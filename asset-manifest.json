@@ -1,0 +1,14 @@
+{
+  "files": {
+    "main.css": "/Hariharan-Arjunan/react-course/static/css/main.8adc7e74.css",
+    "main.js": "/Hariharan-Arjunan/react-course/static/js/main.612cd656.js",
+    "static/media/profile.jpg": "/Hariharan-Arjunan/react-course/static/media/profile.405257eecc09bbf497b1.jpg",
+    "index.html": "/Hariharan-Arjunan/react-course/index.html",
+    "main.8adc7e74.css.map": "/Hariharan-Arjunan/react-course/static/css/main.8adc7e74.css.map",
+    "main.612cd656.js.map": "/Hariharan-Arjunan/react-course/static/js/main.612cd656.js.map"
+  },
+  "entrypoints": [
+    "static/css/main.8adc7e74.css",
+    "static/js/main.612cd656.js"
+  ]
+}
