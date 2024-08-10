@@ -4,8 +4,8 @@ import Portfolio from "./containers/Portfolio";
 function App() {
   return (
     <>
-      {/* <Portfolio /> */}
-      <JavaScript />
+      <Portfolio />
+      {/* <JavaScript /> */}
     </>
   );
 }
