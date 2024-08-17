@@ -1,16 +1,10 @@
-import JavaScript from "./containers/JavaScript";
-import Portfolio from "./containers/Portfolio";
+import HomePage from "./containers/HomePage";
 
 function App() {
-  const isLoading = true;
-  const showPortfolio = false;
   return (
-    <>
-      {isLoading && <div>Loading...</div>}
-      {showPortfolio ? <Portfolio /> : <JavaScript />}
-      {/* <Portfolio />
-      <JavaScript /> */}
-    </>
+    <div>
+      <HomePage />
+    </div>
   );
 }
 
