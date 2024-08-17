@@ -1,5 +1,4 @@
 import React from "react";
-import { listings } from "../data/listings";
 import { Card, CardContent } from "./ui/Card";
 
 const ListingCard = ({ hotel }) => {
