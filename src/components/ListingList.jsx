@@ -1,13 +1,12 @@
 import React from "react";
-import { listings } from "../data/listings";
+
 import ListingCard from "./ListingCard";
 
-const ListingList = () => {
-  const data = listings;
+const ListingList = ({ listings }) => {
   return (
-    <div>
-      {data.map((hotel) => {
-        return <ListingCard key={hotel.name} hotel={hotel} />;
+    <div className="flex flex-wrap justify-center gap-4">
+      {listings.map((hotel) => {
+        return <ListingCard hotel={hotel} />;
       })}
     </div>
   );
