@@ -4,12 +4,19 @@ import ListingList from "../components/ListingList";
 import { listings } from "../data/listings";
 import { Button } from "../components/ui/Button";
 import axios from "axios";
+import ListingDetailsCard from "../components/ListingDetailsCard";
 
 const HomePage = () => {
   const [staticListing, setStaticListing] = useState(listings);
   const [users, setUsers] = useState([{ name: "hari" }, { name: "Yogesh" }]);
-
+  console.log(staticListing);
   const url = "https://jsonplaceholder.typicode.com/users";
+
+  // function data() {
+  //   return [1, 2, 3, 4, 5];
+  // }
+  // const [a, b, c, d, e] = data();
+  // console.log(a, b, c, d, e);
 
   // state- holds the data that directly influence the rendering of the component, it is used for
   // user intractions and change of data and other events
