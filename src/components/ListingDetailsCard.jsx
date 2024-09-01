@@ -1,13 +1,30 @@
-import React from "react";
-import { listings } from "../data/listings";
+import React, { useEffect, useState } from "react";
 import { Card } from "./ui/Card";
 import { useParams } from "react-router-dom";
+import axios from "axios";
+import useFetchData from "../hooks/useFetchData";
 
 const ListingDetailsCard = () => {
   const params = useParams();
   console.log(params);
-  const data = listings.find((x) => x.id == params.listingId);
-  console.log(data);
+  const { listingId } = params;
+  const data = useFetchData(`http://localhost:5000/listing/${listingId}`);
+
+  // const fetchListing = async () => {
+  //   try {
+  //     const response = await axios.get(
+  // `http://localhost:5000/listing/${listingId}`
+  //     );
+  //     console.log(response);
+  //     setData(response.data);
+  //   } catch (error) {
+  //     console.log(error);
+  //   }
+  // };
+
+  // useEffect(() => {
+  //   fetchListing();
+  // }, []);
 
   if (!data) return <p>Hotel not found ....</p>;
 
