@@ -3,12 +3,35 @@ import { Card } from "./ui/Card";
 import { useParams } from "react-router-dom";
 import axios from "axios";
 import useFetchData from "../hooks/useFetchData";
+import { useSelector } from "react-redux";
+import { Button } from "./ui/Button";
+import { Heart } from "lucide-react";
+import { cn } from "../lib/utils/cn";
 
 const ListingDetailsCard = () => {
+  const { listings, status, error, favouriteListingIds } = useSelector(
+    (state) => state.listings
+  );
+  const [data, setData] = useState({});
+  const isFavorite = favouriteListingIds.includes(data?.id);
+  console.log(listings);
   const params = useParams();
   console.log(params);
   const { listingId } = params;
-  const data = useFetchData(`http://localhost:5000/listing/${listingId}`);
+
+  useEffect(() => {
+    if (listings.length === 0) {
+      return <p>Please go back to home page</p>;
+    } else {
+      const hotel = listings.find((x) => x.id === parseInt(listingId));
+      if (hotel) {
+        setData(hotel);
+      } else {
+        setData(null);
+      }
+    }
+  }, []);
+  // const data = useFetchData(`http://localhost:5000/listing/${listingId}`);
 
   // const fetchListing = async () => {
   //   try {
@@ -37,6 +60,13 @@ const ListingDetailsCard = () => {
           <p>Location {data.country}</p>
           <p>{data.maxGuests} Guests</p>
           <p>{data.description}</p>
+          <Button>
+            <Heart
+              className={cn("h-4 w-4", {
+                "fill-primary text-primary": isFavorite,
+              })}
+            />
+          </Button>
         </div>
       </Card>
     </div>
