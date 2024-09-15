@@ -6,15 +6,18 @@ import axios from "axios";
 import { fetchListings } from "../state/listings/listingsSlice";
 import useFetchData from "../hooks/useFetchData";
 import { useDispatch, useSelector } from "react-redux";
+import { Link } from "react-router-dom";
+import { useAuth } from "../context/AuthProvider";
 
 // Store data access - useSelector
 // Store data action - useDispatch
 
 const HomePage = () => {
+  const { token } = useAuth();
   const { listings, error, status, favouriteListingIds } = useSelector(
     (state) => state.listings
   );
-  console.log(favouriteListingIds);
+  console.log(token);
   const dispatch = useDispatch();
 
   // function handleClick() {
@@ -25,9 +28,7 @@ const HomePage = () => {
   // }
 
   useEffect(() => {
-    console.log("i am in effect");
     if (listings.length === 0) {
-      console.log("i am in loop");
       dispatch(fetchListings());
     }
   }, [listings]);
@@ -35,6 +36,8 @@ const HomePage = () => {
   return (
     <div>
       HomePage
+      <br />
+      <Link to={`/favourite`}>Favourite</Link>
       <div className="m-2 flex gap-2">
         <Input
           // onChange={(e) => setPlace(e.target.value)}

@@ -4,12 +4,15 @@ import "./index.css";
 import Router from "./Router";
 import { store } from "./state/store";
 import { Provider } from "react-redux";
+import AuthProvider from "./context/AuthProvider";
 
 const root = ReactDOM.createRoot(document.getElementById("root"));
 root.render(
   <>
     <Provider store={store}>
-      <Router />
+      <AuthProvider>
+        <Router />
+      </AuthProvider>
     </Provider>
   </>
 );

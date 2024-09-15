@@ -78,6 +78,26 @@ const Notes = () => {
   //   );
   // });
 
+  //   import React from "react";
+  // import { useAuth } from "../context/AuthProvider";
+  // import { useNavigate } from "react-router-dom";
+  // import { useEffect } from "react";
+
+  // const Route = ({ children }) => {
+  //   const { token } = useAuth();
+  //   const navigate = useNavigate();
+
+  //   useEffect(() => {
+  //     if (token === null) {
+  //       navigate("/login");
+  //     }
+  //   }, [token]);
+
+  //   return <div>{children}</div>;
+  // };
+
+  // export default Route;
+
   return <div>Notes</div>;
 };
 
